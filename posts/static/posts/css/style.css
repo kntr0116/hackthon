@@ -1,0 +1,31 @@
+body{
+   background-image: url(../img/linedpaper.png);
+   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+   color:gray;
+   font-size: 16pt;
+}
+div {
+    text-align : center ; 
+}
+h1{
+   color: lightseagreen;
+   opacity:0.8;
+   font-size:50pt;
+   margin-top:-20px;
+   margin-bottom: 20px;
+   text-align: center;
+}
+p{
+   max-width: 600px;
+   display: block;
+   margin: 0 auto;
+}
+a{
+   color: blue;
+   text-decoration: none;
+}
+form{
+   max-width: 600px;
+   display: block;
+   margin: 0 auto;
+}
