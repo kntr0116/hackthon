@@ -4,7 +4,7 @@ from.models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['day','choice','text','answer']
+        fields = ['day','pulldown','text','answer','created_at']
     #data=[
         #('one', 'Linux'),
         #('two', 'web'),
