@@ -7,8 +7,6 @@ from django.shortcuts import redirect
 def index(request):
     data = Post.objects.all()
     params = {
-        'title':'welcome！',
-        'msg':'問題一覧',
         'data': data,
     }
     return render(request, 'posts/index.html', params)
@@ -20,8 +18,6 @@ def create(request):
         post.save()
         return redirect(to='/posts')
     params = {
-        'title':'welcome！',
-        'msg':'早速問題を作りましょう！',
         'form': PostForm(),    
     }       
     return render(request,'posts/create.html',params)
