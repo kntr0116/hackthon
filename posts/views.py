@@ -3,11 +3,13 @@ from django.http import HttpResponse
 from .forms import PostForm
 from .models import Post
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 
-def index(request):
+def index(request,num=1):
     data = Post.objects.all()
+    page = Paginator(data, 3)
     params = {
-        'data': data,
+        'data': page.get_page(num)
     }
     return render(request, 'posts/index.html', params)
 
