@@ -55,4 +55,42 @@ def delete(request, num):
     form_class = PostForm
 
 
+# 問題に回答する関数を定義。正解不正解の判定をさせるための条件分技をif文を使って定義。
+def tyousen(request, num):
+    obj = Post.objects.get(id=num)# 問題番号に応じたクエリセットのみをobjに代入
+    if request.method == 'POST':# postsページ(index.html)でchallengeボタンを押した時の処理
+        kaitouview = request.POST['kaitou']# tyousenページで回答欄に記入した文字列をkaitouviewに代入
+        if kaitouview == obj.answer:# 正解の場合の処理
+            dic_seikai = {
+                'title':'welcome！',
+                'msg':'問題に挑戦',
+                'pulldown':obj.pulldown,# models.pyのpulldownフィールドのみを抽出。
+                'text':obj.text,# models.pyのtextフィールドのみを抽出。
+                'reference':obj.reference,# models.pyのreferenceフィールドのみを抽出。
+                'id':num,
+                'kaitou_hyouzi':'',
+                }
+            dic_seikai['kaitou_hyouzi'] = kaitouview# 文字列をdic_seikaiの要素の'kaitou_hyouzi'keyに対応する値として定義
+            return render(request, 'posts/seikai.html', dic_seikai)  
+        else:# 不正解の場合の処理
+            dic_fuseikai = {
+                'title':'welcome！',
+                'msg':'問題に挑戦',
+                'pulldown':obj.pulldown,# models.pyのpulldownフィールドのみを抽出。
+                'text':obj.text,# models.pyのtextフィールドのみを抽出。
+                'id':num,
+                'answer':obj.answer,# models.pyのanswerフィールドのみを抽出。
+                'reference':obj.reference,# models.pyのreferenceフィールドのみを抽出。
+                'kaitou_hyouzi':'',
+                }
+            dic_fuseikai['kaitou_hyouzi'] = kaitouview# 文字列をdic_seikaiの要素の'kaitou_hyouzi'keyに対応する値として定義
+            return render(request, 'posts/fuseikai.html', dic_fuseikai) 
+    params = {
+        'title':'welcome！',
+        'msg':'問題に挑戦',
+        'pulldown':obj.pulldown,
+        'text':obj.text,
+        'id':num,
+    }
+    return render(request, 'posts/tyousen.html', params) 
 # Create your views here.
