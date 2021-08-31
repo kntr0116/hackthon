@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "ja-jp">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}" />
+</head>
+<div>
+  <body class="container">
+    <h1>{{title}}</h1>
+    <h2>{{msg}}</h2>
+        <p>{{ pulldown }}</p>
+        <p>{{ text }}</p>
+     </form>
+     <p>あなたが回答した「 {{ kaitou_hyouzi }} 」は不正解です。。</p>
+     <p>あなたが作成した答えは...</p>
+     <p>{{ answer }}</p>
+     <p>です!!!!</p>
+     <p><a href="{{ reference }}" class="btn btn-primary">参考にしたURLへ</a></p>
+     <p><a href="{% url '問題一覧ページ' %}" class="btn btn-primary">問題一覧へ</a></p>
+   </body>
+  </div>
+  </html> 
