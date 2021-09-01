@@ -5,16 +5,16 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-   
+
     <title>{% block title %}{% endblock %}</title>
-   
+
     <link href="{% static 'posts/css/bootstrap.min.css' %}" rel="stylesheet">
-   
+
     {% block head %}{% endblock %}
   </head>
 
   <body>
-      
+
     {% include 'posts/header.html' %}
 
     {% block contents %}{% endblock %}
@@ -22,5 +22,6 @@
     {% block footer %}{% endblock %}
 
     <script src="{% static 'posts/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="notification.js"></script>
   </body>
 </html>
