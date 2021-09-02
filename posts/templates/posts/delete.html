@@ -1,22 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang = "ja-jp">
-<head>
-  <meta charset="utf-8">
-  <title>{{title}}</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}" />
-</head>
-<div>
-  <body class="container">
-  
-    <h1>{{title}}</h1>
-   
- 
-    <h2>{{msg}}</h2>
-    <p>※以下の問題を削除します。</p>
+{% extends 'posts/base.html' %}
+
+
+{% block title %}delete!!{% endblock %}
+
+{% block contents %} 
+
+<p>※以下の問題を削除します。</p>
     <table class="table">
-       <tr><th>ID</th><td>{{obj.id}}</td></tr>
-       <tr><th>ジャンル</th><td>{{obj.choice}}</td></tr>
        <tr><th>問題内容</th><td>{{obj.text}}</td></tr>
        <tr><th>問題の答え</th><td>{{obj.answer}}</td></tr>
        <form action="{% url 'delete' id %}" method='post'>
@@ -26,8 +16,4 @@
           </td></tr>
        </form>
     </table>
-  
-  
-   </body>
-  </div>
-  </html> 
+{% endblock %}

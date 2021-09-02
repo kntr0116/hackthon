@@ -7,8 +7,9 @@
     <meta charset="utf-8">
    
     <title>{% block title %}{% endblock %}</title>
-   
+  
     <link href="{% static 'posts/css/bootstrap.min.css' %}" rel="stylesheet">
+   
    
     {% block head %}{% endblock %}
   </head>
@@ -19,7 +20,7 @@
 
     {% block contents %}{% endblock %}
 
-    {% block footer %}{% endblock %}
+    {% include 'posts/footer.html'%}
 
     <script src="{% static 'posts/js/bootstrap.bundle.min.js' %}"></script>
   </body>
