@@ -16,10 +16,10 @@ Notification.requestPermission(function(result) {
 const checkTime = function() {
     const currentTime = new Date();
     const hour = currentTime.getHours();
-      if (hour ==17) {var n = new Notification("Hello World")};
-      notif.onclick=function(){
-        window.open("https://stackoverflow.com/questions/27324996/how-can-i-add-simple-link-in-html5-desktop-notification/27325377");
-      };
+      if (hour ==22) {var greet = new Notification("Hello World")};
+      greet.addEventListener('click',function(){
+        window.open('https://www.youtube.com/watch?v=ufKn_OXBbYI');
+      });
 
 };
 
