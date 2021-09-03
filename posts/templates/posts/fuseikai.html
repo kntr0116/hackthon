@@ -1,11 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang = "ja-jp">
-<head>
-  <meta charset="utf-8">
-  <title>{{title}}</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}" />
-</head>
+{% extends 'posts/base.html' %}
+
+
+  {% block title %}{% endblock %}
+
+
+{% block contents %} 
 <div>
   <body class="container">
     <h1>{{title}}</h1>
@@ -21,4 +20,4 @@
      <p><a href="{% url '問題一覧ページ' %}" class="btn btn-primary">問題一覧へ</a></p>
    </body>
   </div>
-  </html> 
+{% endblock %}  
