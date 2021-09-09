@@ -28,4 +28,5 @@ urlpatterns = [
     path("", login_required(index_view), name="index"),
     path("", include("django.contrib.auth.urls")),
     path('posts/',include('posts.urls')),
+    path('top/' ,include('top.urls')),
 ]

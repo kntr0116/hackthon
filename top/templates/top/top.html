@@ -1,0 +1,12 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}top{% endblock %}
+
+{% block contents %}
+
+
+<div class="top-title">ようこそ想起アプリへ！！</div>
+<button class="btn1"><a>みんなの問題一覧へ</a></button>
+<button class="btn2"><a href="{% url 'create' %}">問題作成へ</a></button>
+
+{% endblock %}
