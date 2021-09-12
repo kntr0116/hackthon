@@ -1,23 +1,48 @@
-{% extends 'posts/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+
+    <title>list</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allison&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'top/images/IMG_0016.jpeg' %}">
+
+  </head>
 
 
-  {% block title %}welcome!!{% endblock %}
+
+<body>
+   <header class="page-header wrapper">
+      <h1><a href="{% url 'top:top' %}"><img class="gazo" src="{% static 'posts/images/IMG_0015.PNG' %}" alt="Remind me ホーム"></a></h1>
+      <nav>
+          <ul class="main-nav">
+            <li><a href="{% url 'create' %}">Cleate</a></li>
+            <li><a href="{% url '問題一覧ページ' %}">Collection</a></li>
+            <li><a href="">Account</a></li>
+          </ul>
+      </nav>
+    </header>
 
 
-{% block contents %} 
-  <table class="table">
-       <tr>
-           <th>set a paper!!</th>
-       </tr>
+   <div class="set">list</div>
    {% for item in data %}
-       <tr>
-          <td>{{item}}</td>
-          <td><a href="{% url 'edit' item.id %}">Edit</a></td>
-          <td><a href="{% url 'delete' item.id %}">Delete</a></td>
-          <td><a href="{% url 'tyousen' item.id %}">Challenge!!</a></td><!--問題に回答するページに遷移-->
-       </tr>
+   <div class="container">
+      <div class="item">{{item}}</div>
+         <nav>
+            <ul class="sub-nav">
+               <li><a class="switch" href="{% url 'edit' item.id %}">Edit</a></li>
+               <li><a class="switch" href="{% url 'delete' item.id %}">Delete</a></li>
+               <li><a class="switch" href="{% url 'tyousen' item.id %}">Challenge!!</a></li>
+            </ul>
+         </nav>
+   </div>
     {% endfor %}
-  </table>
+  
   <ul class="pagination">
     {% if data.has_previous %}
     <li class="page_item">
@@ -62,4 +87,10 @@
    </li>
    {% endif %}
  </ul>
-{% endblock %}
+ <footer>
+   <div class="wrapper">
+     <p><small>&copy; 2021 Hackthon Group1</small></p>
+   </div>
+ </footer>
+</body>
+</html>
