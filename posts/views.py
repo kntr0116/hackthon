@@ -5,10 +5,10 @@ from .models import Post
 from django.shortcuts import redirect
 from django.core.paginator import Paginator
 
-#問題作成ページ
+#問題一覧ページ
 def index(request,num=1):
     data = Post.objects.all()
-    page = Paginator(data, 10)
+    page = Paginator(data, 5)
     params = {
         'data': page.get_page(num)
     }

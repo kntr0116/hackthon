@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/*ユーザの設定した文字サイズを正しく反映させる*/
+html{
+  font-size: 100%;
+}
+
+/*書体の指定、行の高さ、色の指定*/
+body{
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  color: #432;
+}
+
+/*<a>タグの罫線の指定*/
+a {
+  text-decoration: none;
+}
+
+/*ナビゲーションメニューの『横並びの指定』と『両端の設置』の指定*/
+.page-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+/*画像のサイズの指定*/
+img{
+  max-width: 100%;
+}
+
+/*画像の横幅とマージンの指定*/
+.gazo{
+  width: 150px;
+  margin-top: 14px;
+}
+
+/*ナビゲーションバーの装飾*/
+.main-nav{
+  display: flex;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin-top: 34px;
+  list-style: none;
+}
+.main-nav li{
+  margin-left: 36px;
+}
+.main-nav a{
+  color: #432;
+}
+.main-nav a:hover{
+  color: #0bd;
+}
+/*ヘッダーの左右の余白を作成*/
+.wrapper{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/*set a paperの部分*/
+.set{
+  font-family: 'Allison', cursive;
+  text-align: center;
+  margin: 5px 0 20px;
+  font-size: 8rem;
+}
+
+/*個々の問題のボックス*/
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/*問題のリンク*/
+.sub-nav{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1;
+  text-transform: uppercase;
+  margin-top: 20px;
+  list-style: none;
+}
+.sub-nav li{
+  margin-left: 36px;
+}
+
+.sub-nav a{
+  color: #333333;
+}
+
+.sub-nav a:hover{
+  color: #0bd;
+}
+
+/*問題の背景とサイズ*/
+.item{
+  background: #f8f8f8;
+  color: #333333;
+  padding: 20px
+}
+.switch{
+  background: #e8e8e8;
+  color: #333333;
+  padding: 6px;
+}
+
+
+.pagination{
+  display: flex;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 40px;
+  list-style: none;
+  justify-content: center;
+}
+
+.page-link{
+  background: #e8e8e8;
+  color: #000;
+  margin: 10px;
+  padding: 10px;;
+}
+.page-item a:hover{
+  color: #0bd;
+}
+
+footer{
+  background: #000000;
+  text-align: center;
+  padding: 26px 0;
+}
+footer p{
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.wrapper{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.form-container {
+  margin: auto;
+  text-align: center; 
+  width: 40vw;
+  height: 120vh;
+}
+.btn{
+  background: #e8e8e8;
+  color: #000;
+}
+.btn:hover{
+  color: #fff;
+}
+
+.anser{
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  height: 10vh;
+}
+.huseikai-container {
+  margin: auto;
+  text-align: center; 
+  width: 40vw;
+  height: 80vh;
+}

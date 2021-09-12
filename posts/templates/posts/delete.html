@@ -1,19 +1,53 @@
-{% extends 'posts/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <!--link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allison&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'posts/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">
+    
+
+  </head>
 
 
-{% block title %}delete!!{% endblock %}
 
-{% block contents %} 
+ <body>
+   <header class="page-header wrapper">
+      <h1><a href="{% url 'top:top' %}"><img class="gazo" src="{% static 'posts/images/IMG_0015.PNG' %}" alt="Remind me ホーム"></a></h1>
+      <nav>
+          <ul class="main-nav">
+            <li><a href="{% url 'create' %}">Cleate</a></li>
+            <li><a href="{% url '問題一覧ページ' %}">Collection</a></li>
+            <li><a href="">Account</a></li>
+          </ul>
+      </nav>
+    </header>
 
-<p>※以下の問題を削除します。</p>
+<div class="huseikai-container">
+    <div class="set">elimination</div>
+ <p class="anser">※以下の問題を削除します。</p>
     <table class="table">
        <tr><th>問題内容</th><td>{{obj.text}}</td></tr>
        <tr><th>問題の答え</th><td>{{obj.answer}}</td></tr>
        <form action="{% url 'delete' id %}" method='post'>
        {% csrf_token %}
           <tr><th></th><td>
-              <input type="submit" value="click">
+              <input type="submit" value="削除"
+              class="btn btn-primary mt-2">
           </td></tr>
        </form>
     </table>
-{% endblock %}
+</div>
+    <footer>
+        <div class="wrapper">
+          <p><small>&copy; 2021 Hackthon Group1</small></p>
+        </div>
+      </footer>
+ </body>
+</html>

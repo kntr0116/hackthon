@@ -1,17 +1,47 @@
-{% extends 'posts/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <!--link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allison&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'posts/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">
+    
+
+  </head>
 
 
-  {% block title %}Challenge!!{% endblock %}
 
+ <body>
+   <header class="page-header wrapper">
+      <h1><a href="{% url 'top:top' %}"><img class="gazo" src="{% static 'posts/images/IMG_0015.PNG' %}" alt="Remind me ホーム"></a></h1>
+      <nav>
+          <ul class="main-nav">
+            <li><a href="{% url 'create' %}">Cleate</a></li>
+            <li><a href="{% url '問題一覧ページ' %}">Collection</a></li>
+            <li><a href="">Account</a></li>
+          </ul>
+      </nav>
+    </header>
 
-{% block contents %} 
- 
+    <div class="set">Challenge!!</div>
+
     <form action="{% url 'tyousen' id %}" method='post' autocomplete="off">
     {% csrf_token %}
-        <p>{{ pulldown }}</p>
-        <p>{{ text }}</p>
-        <p>回答欄:<input type="text" name="kaitou"></p>
-        <p><input type="submit" value="回答する"></p>
+        <p class="anser">{{ pulldown }}</p>
+        <p class="anser">{{ text }}</p>
+        <p class="anser">回答欄:<input type="text" name="kaitou"></p>
+        <p class="anser"><input type="submit" value="回答する"></p>
      </form>
-
-{% endblock %}
+     <footer>
+      <div class="wrapper">
+        <p><small>&copy; 2021 Hackthon Group1</small></p>
+      </div>
+    </footer>
+ </body>
+</html>

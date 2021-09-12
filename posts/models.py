@@ -14,8 +14,8 @@ CHOICES = (
 class Post(models.Model):
     day = models.DateField(verbose_name='日付', default=timezone.now)
     pulldown = models.CharField(verbose_name='ジャンル',choices=CHOICES,max_length=10)
-    text = models.TextField(verbose_name='問題内容', max_length=200)
-    answer = models.TextField(verbose_name='問題の答え', max_length=200)
+    text = models.TextField(verbose_name='問題内容', max_length=100)
+    answer = models.TextField(verbose_name='問題の答え', max_length=100)
     created_at = models.DateTimeField(verbose_name='通知日時', default=timezone.now)
     reference = models.URLField(verbose_name='参考URL', max_length=200, null=True, blank=True)
 

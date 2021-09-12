@@ -1,0 +1,108 @@
+@charset "UTF-8";
+html{
+    font-size: 100%;
+}
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    color: #432;
+}
+.top-content{
+    text-align: center;
+    margin-top: 10%;
+}
+.top-content{
+    font-size: 1.125rem;
+    margin: 10px 0 60px;
+}
+.page-title {
+    font-family: 'Allison', cursive;
+    font-size: 12rem;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+.button {
+    font-size:1.35rem;
+    color: #fff;
+    padding:18px 32px;
+    background: #dddddd;
+    border-radius: 5px;
+}
+.button:hover{
+    background: #c0db75;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.logo{
+    width: 150px;
+    margin-top: 14px;
+}
+img{
+    max-width: 100%;
+}
+.main-nav{
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li{
+    margin-left: 36px;
+}
+.main-nav a{
+    color: #432;
+}
+.main-nav a:hover{
+    color: #0bd;
+}
+.wrapper{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+.page-header{
+    display: flex;
+    justify-content: space-between;
+}
+#home{
+    min-height: 100vh
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.item{
+    background: #000000;
+    margin: 65px;
+    padding: 50px;
+}
+.item a{
+    color: #fff;
+}
+.item a:hover{
+    color: #0bd;
+}
+footer{
+    background: #000000;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p{
+    color: #fff;
+    font-size: 0.875rem;
+}
+.sub-content{
+    font-size: 4rem;
+    text-align: center;
+    padding: 0 8px 8px;
+    border-bottom: 2px #dddddd inset;
+    font-weight: normal;
+}
+h3{
+    font-family: 'Allison', cursive;
+}
